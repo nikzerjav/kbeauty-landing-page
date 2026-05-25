@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>K-Beauty Studio Ljubljana</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Inter', sans-serif;
+      background:#fffaf7;
+      color:#2d2d2d;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:25px 0;
+    }
+
+    .logo{
+      font-family:'Playfair Display', serif;
+      font-size:32px;
+      font-weight:700;
+      color:#2b2b2b;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+    }
+
+    .nav-links a{
+      color:#444;
+      font-weight:500;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:90vh;
+      display:flex;
+      align-items:center;
+      background:
+      linear-gradient(
+        rgba(255,250,247,0.85),
+        rgba(255,250,247,0.85)
+      ),
+      url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1600&auto=format&fit=crop')
+      center/cover;
+    }
+
+    .hero-content{
+      max-width:650px;
+    }
+
+    .hero h1{
+      font-family:'Playfair Display', serif;
+      font-size:68px;
+      line-height:1.1;
+      margin-bottom:25px;
+      color:#1f1f1f;
+    }
+
+    .hero p{
+      font-size:20px;
+      margin-bottom:35px;
+      color:#555;
+    }
+
+    .buttons{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:16px 32px;
+      border-radius:40px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn-primary{
+      background:#e8b4b8;
+      color:white;
+    }
+
+    .btn-primary:hover{
+      background:#d99ca1;
+    }
+
+    .btn-secondary{
+      border:1px solid #d4b4b7;
+      color:#444;
+      background:white;
+    }
+
+    .btn-secondary:hover{
+      background:#f7ecec;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:100px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:48px;
+      font-family:'Playfair Display', serif;
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      color:#777;
+      max-width:700px;
+      margin:auto;
+    }
+
+    /* FEATURES */
+
+    .features{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .feature-card{
+      background:white;
+      padding:40px;
+      border-radius:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.05);
+      transition:0.3s;
+    }
+
+    .feature-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .feature-card h3{
+      margin-bottom:15px;
+      font-size:24px;
+    }
+
+    /* TREATMENTS */
+
+    .treatments{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .treatment-card{
+      background:white;
+      border-radius:25px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .treatment-card img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+    }
+
+    .treatment-content{
+      padding:30px;
+    }
+
+    .treatment-content h3{
+      margin-bottom:15px;
+      font-size:28px;
+    }
+
+    .treatment-content p{
+      color:#666;
+      margin-bottom:25px;
+    }
+
+    /* TESTIMONIALS */
+
+    .testimonials{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .testimonial{
+      background:white;
+      padding:40px;
+      border-radius:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .testimonial p{
+      margin-bottom:20px;
+      color:#555;
+    }
+
+    .testimonial h4{
+      color:#111;
+    }
+
+    /* CTA */
+
+    .cta{
+      background:#f8e7e8;
+      text-align:center;
+      border-radius:40px;
+      padding:80px 40px;
+    }
+
+    .cta h2{
+      font-size:52px;
+      margin-bottom:20px;
+      font-family:'Playfair Display', serif;
+    }
+
+    .cta p{
+      margin-bottom:35px;
+      color:#555;
+      font-size:18px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      padding:50px 0;
+      text-align:center;
+      color:#777;
+    }
+
+    footer h3{
+      font-family:'Playfair Display', serif;
+      margin-bottom:15px;
+      color:#222;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:48px;
+      }
+
+      .section-title h2{
+        font-size:38px;
+      }
+
+      .cta h2{
+        font-size:40px;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .nav-links{
+        gap:15px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+
+  <div class="container">
+    <nav>
+      <div class="logo">K-Beauty Studio</div>
+
+      <div class="nav-links">
+        <a href="#">Domov</a>
+        <a href="#">Tretmaji</a>
+        <a href="#">O nas</a>
+        <a href="#">Kontakt</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="container">
+
+      <div class="hero-content">
+
+        <h1>
+          Odkrij skrivnost
+          korejske “glass skin” kože
+        </h1>
+
+        <p>
+          Premium K-beauty facial tretmaji,
+          personalizirana analiza kože in
+          popolna self-care izkušnja v Ljubljani.
+        </p>
+
+        <div class="buttons">
+          <a href="#" class="btn btn-primary">
+            Rezerviraj termin
+          </a>
+
+          <a href="#" class="btn btn-secondary">
+            Več informacij
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY US -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Zakaj korejska nega kože?</h2>
+
+        <p>
+          Korejska skincare filozofija temelji na
+          nežni negi, dolgotrajni hidraciji in zdravju kože.
+        </p>
+      </div>
+
+      <div class="features">
+
+        <div class="feature-card">
+          <h3>✨ Glass Skin Glow</h3>
+          <p>
+            Dosezi sijočo, zdravo in navlaženo kožo
+            brez agresivnih postopkov.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>💧 Globinska hidracija</h3>
+          <p>
+            Obnovi kožno bariero in izboljšaj teksturo kože.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>🌿 Personaliziran pristop</h3>
+          <p>
+            Vsak tretma prilagodimo tvojemu tipu kože.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TREATMENTS -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Najbolj priljubljeni tretmaji</h2>
+      </div>
+
+      <div class="treatments">
+
+        <div class="treatment-card">
+
+          <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1200&auto=format&fit=crop" alt="Hydration Facial">
+
+          <div class="treatment-content">
+
+            <h3>Hydration Facial</h3>
+
+            <p>
+              Intenzivna hidracija za utrujeno,
+              suho in občutljivo kožo.
+            </p>
+
+            <a href="#" class="btn btn-primary">
+              Rezerviraj
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="treatment-card">
+
+          <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1200&auto=format&fit=crop" alt="Glass Skin">
+
+          <div class="treatment-content">
+
+            <h3>Glass Skin Treatment</h3>
+
+            <p>
+              Signature K-beauty tretma za
+              sijoč in gladek videz kože.
+            </p>
+
+            <a href="#" class="btn btn-primary">
+              Preizkusi
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="treatment-card">
+
+          <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200&auto=format&fit=crop" alt="Acne Calm">
+
+          <div class="treatment-content">
+
+            <h3>Acne Calm Ritual</h3>
+
+            <p>
+              Nežen tretma za problematično
+              in občutljivo kožo.
+            </p>
+
+            <a href="#" class="btn btn-primary">
+              Več info
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TESTIMONIALS -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Kaj pravijo naše stranke?</h2>
+      </div>
+
+      <div class="testimonials">
+
+        <div class="testimonial">
+          <p>
+            “Po tretmaju je moja koža izgledala
+            neverjetno sijoča in zdrava.”
+          </p>
+
+          <h4>— Nina, 28</h4>
+        </div>
+
+        <div class="testimonial">
+          <p>
+            “Najbolj relaxing beauty experience
+            v Ljubljani.”
+          </p>
+
+          <h4>— Sara, 24</h4>
+        </div>
+
+        <div class="testimonial">
+          <p>
+            “Končno skincare pristop,
+            ki ni agresiven do kože.”
+          </p>
+
+          <h4>— Maja, 31</h4>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="cta">
+
+        <h2>
+          Rezerviraj svoj prvi
+          K-beauty tretma
+        </h2>
+
+        <p>
+          Prvih 50 strank prejme
+          20 % opening popust + brezplačno analizo kože.
+        </p>
+
+        <a href="#" class="btn btn-primary">
+          BOOK NOW
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <h3>K-Beauty Studio Ljubljana</h3>
+
+      <p>
+        Instagram • TikTok • hello@kbeautystudio.si
+      </p>
+
+      <p style="margin-top:10px;">
+        © 2026 All rights reserved
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
