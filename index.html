@@ -296,6 +296,25 @@
       }
 
     }
+.email-form{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  max-width:500px;
+  margin:40px auto 0;
+}
+
+.email-form input{
+  padding:18px;
+  border:none;
+  border-radius:15px;
+  font-size:16px;
+}
+
+.email-form button{
+  border:none;
+  cursor:pointer;
+}
 
   </style>
 </head>
@@ -523,6 +542,7 @@
 
   <section>
 
+
     <div class="container">
 
       <div class="cta">
@@ -537,8 +557,10 @@
           20 % opening popust + brezplačno analizo kože.
         </p>
 
-        <a href="#" class="btn btn-primary">
-          BOOK NOW
+        <a href="<a href="#signup" class="btn btn-primary">
+  	Rezerviraj brezplačen posvet
+	</a>" class="btn btn-primary">
+          Rezerviraj
         </a>
 
       </div>
@@ -546,6 +568,50 @@
     </div>
 
   </section>
+<section>
+  <section id="signup">
+  <div class="container">
+
+    <div class="cta">
+
+      <h2>
+        Pridruži se opening listi ✨
+      </h2>
+
+      <p>
+        Prejmi 20 % opening popust,
+        brezplačno analizo kože in early access termine.
+      </p>
+
+      <form
+  	class="email-form"
+  	action="https://formspree.io/forms/mwvznzar/integration"
+  	method="POST"
+      >
+
+        <input
+          type="text"
+          placeholder="Tvoje ime"
+          required
+        >
+
+        <input
+          type="email"
+          placeholder="Tvoj e-mail"
+          required
+        >
+
+        <button type="submit" class="btn btn-primary">
+          Prijavi se
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
 
   <!-- FOOTER -->
 
